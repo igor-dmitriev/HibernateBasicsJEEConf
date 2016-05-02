@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
@@ -13,11 +14,11 @@ import javax.persistence.Id;
 @Entity
 @Getter
 @Setter
-public class Account {
+public class Client {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    private int amount;
-    private String currency;
+    private String name;
+    private int age;
 }

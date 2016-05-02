@@ -3,6 +3,7 @@ package com.jeeconf.hibernate.basics.dirtychecking;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.jeeconf.hibernate.basics.BaseTest;
 import com.jeeconf.hibernate.basics.dirtychecking.entity.Account;
+import com.jeeconf.hibernate.basics.dirtychecking.entity.Client;
 import org.junit.Test;
 import org.springframework.test.annotation.Commit;
 
@@ -16,5 +17,7 @@ public class DirtyCheckingTest extends BaseTest {
     public void test() {
         Account account = em.find(Account.class, 1);
         account.setAmount(500);
+
+        Client client = em.find(Client.class, 1);
     }
 }

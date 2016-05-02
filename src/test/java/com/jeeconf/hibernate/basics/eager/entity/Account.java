@@ -17,6 +17,7 @@ public class Account {
     private Integer id;
 
     private int amount;
+    private String currency;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_client")

@@ -1,3 +1,4 @@
 <dataset>
-    <Account id="1" amount="300"/>
+    <Client id="1" name="Alex" age="27"/>
+    <Account id="1" amount="300" currency="USD" number="3443"/>
 </dataset>

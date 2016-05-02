@@ -18,6 +18,7 @@ public class Account {
     private Integer id;
 
     private int amount;
+    private String currency;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_client")
