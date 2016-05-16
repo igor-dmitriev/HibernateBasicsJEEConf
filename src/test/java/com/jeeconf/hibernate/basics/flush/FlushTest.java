@@ -16,7 +16,7 @@ import org.springframework.test.annotation.Commit;
 public class FlushTest extends BaseTest {
     @Test
     @Commit
-    public void saveUserWithFlushOnCommit() {
+    public void flushOccursOnCommitNotOnPersist() {
         Client client = new Client();
         em.persist(client);
         int age = client.getAge();
@@ -25,7 +25,7 @@ public class FlushTest extends BaseTest {
 
     @Test
     @Commit
-    public void executionOrder() {
+    public void showSpecificExecutionOrder() {
         // 1. select client
         Client client = em.find(Client.class, 10);
         // 2. select account
@@ -38,6 +38,17 @@ public class FlushTest extends BaseTest {
         Report report = new Report();
         report.setDescription("Client has been updated; Account has been removed");
         em.persist(report);
+    }
+
+    @Test
+    @Commit
+    public void showFlushNativeSelect() {
+        Client client = new Client();
+        client.setName("John");
+        getSession().persist(client);
+        String sql = "select c.id,c.name,c.age from Client c";
+        getSession().createSQLQuery(sql).uniqueResult();
+        //em.createNativeQuery(sql).getResultList();
     }
 
     @Test
