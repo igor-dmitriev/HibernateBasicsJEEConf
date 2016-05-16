@@ -24,4 +24,9 @@ public class LazyLoadingTest extends BaseTest {
         Account account = em.find(Account.class, 1);
         account.getClient();
     }
+
+    @Test
+    public void load() {
+        getSession().load(Client.class, 1);
+    }
 }
