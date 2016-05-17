@@ -5,7 +5,7 @@ import org.hibernate.engine.jdbc.internal.BasicFormatterImpl;
 import org.hibernate.engine.jdbc.internal.Formatter;
 
 /**
- * Created by Igor Dmitriev on 1/3/16
+ * Created by Igor Dmitriev / Mikalai Alimenkou on 1/3/16
  */
 public class SimpleFormatter implements MessageFormattingStrategy {
 

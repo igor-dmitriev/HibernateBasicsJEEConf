@@ -90,9 +90,10 @@
                 <executions>
                     <execution>
                         <configuration>
-                            <dir>${project.build.directory}/test-classes/com/jeeconf/hibernate/basics</dir>
+                            <dir>${project.build.directory}/classes/com/jeeconf/hibernate/basics/entity</dir>
                             <failOnError>false</failOnError>
                             <enableDirtyTracking>true</enableDirtyTracking>
+                            <enableLazyInitialization>true</enableLazyInitialization>
                             <enableAssociationManagement>true</enableAssociationManagement>
                         </configuration>
                         <goals>

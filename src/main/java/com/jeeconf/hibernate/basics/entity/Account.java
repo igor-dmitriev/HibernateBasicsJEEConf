@@ -1,4 +1,4 @@
-package com.jeeconf.hibernate.basics.flush.entity;
+package com.jeeconf.hibernate.basics.entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -6,7 +6,7 @@ import lombok.Setter;
 import javax.persistence.*;
 
 /**
- * Created by Igor Dmitriev on 4/29/16
+ * Created by Igor Dmitriev / Mikalai Alimenkou on 4/29/16
  */
 @Entity
 @Getter
@@ -14,6 +14,7 @@ import javax.persistence.*;
 public class Account {
     @Id
     @GeneratedValue
+    @Column(name = "id_account")
     private Integer id;
 
     private int amount;

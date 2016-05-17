@@ -1,4 +1,4 @@
-package com.jeeconf.hibernate.basics.eager.entity;
+package com.jeeconf.hibernate.basics.entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Igor Dmitriev on 4/29/16
+ * Created by Igor Dmitriev / Mikalai Alimenkou on 4/29/16
  */
 @Entity
 @Getter
@@ -16,11 +16,12 @@ import java.util.List;
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "id_client")
     private Integer id;
 
     private String name;
     private int age;
 
-    @OneToMany(mappedBy = "client")
+    @OneToMany(mappedBy = "client", fetch = FetchType.LAZY)
     private List<Account> accounts = new ArrayList<>();
 }

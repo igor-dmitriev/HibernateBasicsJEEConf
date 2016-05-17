@@ -1,4 +1,0 @@
-<dataset>
-    <Client id="10" name="Dima" age="35"/>
-    <Account id="10" amount="300" id_client="10"/>
-</dataset>
