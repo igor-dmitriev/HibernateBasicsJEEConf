@@ -1,0 +1,7 @@
+<dataset>
+    <Client id_client="10" name="John" age="15"/>
+    <Client id_client="11" name="Mike" age="24"/>
+    <Client id_client="12" name="Kevin" age="19"/>
+
+    <Report id="10" description="JEEConf 2016"/>
+</dataset>

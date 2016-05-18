@@ -18,7 +18,7 @@ import org.springframework.test.annotation.Commit;
 public class DirtyCheckingTest extends BaseTest {
     @Test
     @Commit
-    public void test() {
+    public void dirtyChecking() {
         Account account = em.find(Account.class, 10);
         account.setAmount(500);
 

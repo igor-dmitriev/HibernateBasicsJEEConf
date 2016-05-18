@@ -12,7 +12,7 @@ import org.springframework.test.annotation.Commit;
  * Created by Igor Dmitriev / Mikalai Alimenkou on 4/29/16
  */
 
-@DatabaseSetup("/data.xml")
+@DatabaseSetup("/flush.xml")
 public class FlushTest extends BaseTest {
 
     @Test
