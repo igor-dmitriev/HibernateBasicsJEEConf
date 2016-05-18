@@ -18,7 +18,7 @@ public class NplusOneTest extends BaseTest {
     public void nPlusOneIssue() {
         List<Client> clients = em.createQuery("select c from Client c", Client.class)
                 .getResultList();
-        clients.forEach(a -> a.getAccounts().size());
+        clients.forEach(c -> c.getAccounts().size());
     }
 
     @Test

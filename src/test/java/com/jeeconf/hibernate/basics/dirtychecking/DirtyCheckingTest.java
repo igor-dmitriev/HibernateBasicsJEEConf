@@ -20,7 +20,7 @@ public class DirtyCheckingTest extends BaseTest {
     @Commit
     public void dirtyChecking() {
         Account account = em.find(Account.class, 10);
-        account.setAmount(500);
+        account.setAmount(100);
 
         Client client = em.find(Client.class, 10);
     }

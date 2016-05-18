@@ -2,6 +2,8 @@ package com.jeeconf.hibernate.basics.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -23,5 +25,6 @@ public class Client {
     private int age;
 
     @OneToMany(mappedBy = "client", fetch = FetchType.LAZY)
+    @LazyCollection(LazyCollectionOption.EXTRA)
     private List<Account> accounts = new ArrayList<>();
 }
