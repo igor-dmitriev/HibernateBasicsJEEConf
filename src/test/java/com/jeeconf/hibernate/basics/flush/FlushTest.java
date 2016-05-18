@@ -38,7 +38,7 @@ public class FlushTest extends BaseTest {
         Client client = new Client();
         client.setName("John");
         getSession().persist(client);
-        String sql = "select c.id,c.name,c.age from Client c";
+        String sql = "select c.id_client,c.name,c.age from Client c";
         getSession().createSQLQuery(sql).list();
         //em.createNativeQuery(sql).getResultList();
     }
