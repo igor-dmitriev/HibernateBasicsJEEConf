@@ -19,17 +19,17 @@ public class FlushTest extends BaseTest {
     @Commit
     public void showSpecificExecutionOrder() {
         // 1. select client
-        Client client = em.find(Client.class, 10);
+        Client client = getSession().get(Client.class, 10);
         // 2. select account
         Account account = client.getAccounts().get(0);
         // 3. delete account
-        em.remove(account);
+        getSession().delete(account);
         // 4. update client
         client.setName("Elvis");
         // 5. insert new report
         Report report = new Report();
         report.setDescription("Client has been updated; Account has been removed");
-        em.persist(report);
+        getSession().persist(report);
     }
 
     @Test
@@ -46,7 +46,7 @@ public class FlushTest extends BaseTest {
     @Test
     @Commit
     public void updateAllFields() {
-        Client client = em.find(Client.class, 10);
+        Client client = getSession().get(Client.class, 10);
         client.setAge(30);
     }
 

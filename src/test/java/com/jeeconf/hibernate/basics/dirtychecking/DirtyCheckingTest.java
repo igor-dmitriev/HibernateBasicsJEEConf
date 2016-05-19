@@ -19,15 +19,19 @@ public class DirtyCheckingTest extends BaseTest {
     @Test
     @Commit
     public void dirtyChecking() {
-        Account account = em.find(Account.class, 10);
+        Account account = getSession().get(Account.class, 10);
         account.setAmount(100);
 
-        Client client = em.find(Client.class, 10);
+        Client client = getSession().get(Client.class, 10);
     }
 
     @Test
+    @Commit
     public void dirtyCheckingDisableForQuery() {
-        getSession().createQuery("select c from Client c").setReadOnly(true).list();
+        // add @Immutable to Client
+        Client client = getSession().get(Client.class, 10);
+        // for queries it is also possible
+        // getSession().createQuery("select c from Client c").setReadOnly(true).list();
     }
 
     @Test

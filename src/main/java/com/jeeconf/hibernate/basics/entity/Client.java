@@ -22,6 +22,6 @@ public class Client {
     private String name;
     private int age;
 
-    @OneToMany(mappedBy = "client", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "client"/*, orphanRemoval = true*/)
     private List<Account> accounts = new ArrayList<>();
 }

@@ -15,7 +15,7 @@ public class LazyLoadingTest extends BaseTest {
 
     @Test
     public void lazyCollection() {
-        Client client = em.find(Client.class, 10);
+        Client client = getSession().get(Client.class, 10);
         System.out.println("<- got client");
         client.getAccounts();
         System.out.println("<- got accounts");
@@ -25,7 +25,7 @@ public class LazyLoadingTest extends BaseTest {
 
     @Test
     public void lazyEntity() {
-        Account account = em.find(Account.class, 10);
+        Account account = getSession().get(Account.class, 10);
         System.out.println("<- got account");
         account.getClient();
         System.out.println("<- got client");
