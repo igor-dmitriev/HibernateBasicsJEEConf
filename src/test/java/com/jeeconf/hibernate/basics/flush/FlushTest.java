@@ -25,7 +25,7 @@ public class FlushTest extends BaseTest {
         // 3. delete account
         em.remove(account);
         // 4. update client
-        client.setName("John");
+        client.setName("Elvis");
         // 5. insert new report
         Report report = new Report();
         report.setDescription("Client has been updated; Account has been removed");
@@ -36,7 +36,7 @@ public class FlushTest extends BaseTest {
     @Commit
     public void showFlushNativeSelect() {
         Client client = new Client();
-        client.setName("John");
+        client.setName("Bob");
         getSession().persist(client);
         String sql = "select c.id_client,c.name,c.age from Client c";
         getSession().createSQLQuery(sql).list();
